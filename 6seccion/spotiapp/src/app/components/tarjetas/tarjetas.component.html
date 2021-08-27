@@ -1,0 +1,22 @@
+<div class="card-columns animated fadeIn">
+
+    <div *ngFor="let item of items" class="card">
+        <img class="card-img-top" [src]="item.images[0].url" alt="Card image cap">
+        <div class="card-body">
+            <div [ngSwitch]="item.type">
+                <div *ngSwitchCase="'artist'">
+                    <h5 class="card-title puntero" (click)="verSearchArtist(item)">{{ item.name }}</h5>
+                </div>
+                <div *ngSwitchDefault>
+                    <h5 class="card-title">{{ item.name }}</h5>
+                </div>
+            </div>
+
+            <div *ngIf="item.artists?.length > 0 ">
+                <p *ngFor="let artista of item.artists" class="card-text">
+                    <span class="badge badge-primary puntero" (click)="verBadge(artista.id)">{{ artista.name }}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

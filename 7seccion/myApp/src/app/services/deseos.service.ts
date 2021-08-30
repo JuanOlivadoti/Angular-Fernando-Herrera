@@ -14,7 +14,6 @@ export class DeseosService {
     this.cargarStorage();
     // const lista1 = new Lista('Recolectar piedras')
     // const lista2 = new Lista('Heroes a desaparecer')
-
     // this.listas.push(lista1, lista2);
 
   }
